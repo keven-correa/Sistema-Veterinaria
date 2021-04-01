@@ -1,0 +1,26 @@
+﻿@model WebAppSistemaVeterinaria.Models.HistorialViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Crear</h2>
+
+<h4>Historial</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddHistory">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MascotaId" />
+
+            <partial name="_History" />
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="DetailsPet" asp-route-id="@Model.MascotaId" class="btn btn-success">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>

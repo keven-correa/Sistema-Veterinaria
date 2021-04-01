@@ -21,11 +21,11 @@ namespace WebAppSistemaVeterinaria.Data
         public async Task SeedAsync()
         {
             await _datacontext.Database.EnsureCreatedAsync();
-            await checkRolesAsync();
+            await checkRoles();
             await checkTiposMascotasAsync();
             await checkTipoServiciosAsync();
-            var customer = await checkUserAsync("1010", "Juan", "Romero", "jromero11@gmail.com", "809 333 2222", "Calle Paraiso", "Customer");
-            var manager = await checkUserAsync("2020", "Admin", "Admin", "Admin@gmail.com", "809 111 2222", "Calle #1", "Admin");
+            var customer = await checkUserAsync("4040", "Juan", "Romero", "jromero11@gmail.com", "809 333 2222", "Calle Paraiso", "Customer");
+            var manager = await checkUserAsync("1010", "Miguel", "Zuluaga", "jzuluaga55@gmail.com", "829 634 2747", "Calle Luna Calle Sol", "Admin");
             await checkClientesAsync(customer);
             await checkMascotasAsync();
             await checkAgendasAsync();
@@ -71,11 +71,11 @@ namespace WebAppSistemaVeterinaria.Data
                     Cedula = cedula
                 };
                 await _userHelper.AddUserAsync(user, "123456");
-                await _userHelper.AddUserAsync(user, role);
+                await _userHelper.AddUserToRoleAsync(user, role);
             }
             return user;
         }
-        private async Task checkRolesAsync()
+        private async Task checkRoles()
         {
             await _userHelper.CheckRoleAsync("Admin");
             await _userHelper.CheckRoleAsync("Customer");

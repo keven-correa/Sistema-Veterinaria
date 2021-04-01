@@ -1,0 +1,25 @@
+﻿@model WebAppSistemaVeterinaria.Models.MascotaViewModel
+@{
+    ViewData["Title"] = "AddPet";
+}
+
+
+<h2>Agregar nueva mascota</h2>
+
+<h4></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddPet" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ClienteId" />
+
+            <partial name="_Mascota" />
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index"  class="btn btn-success">Regresar a clientes</a>
+            </div>
+        </form>
+    </div>
+</div>

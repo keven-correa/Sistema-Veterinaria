@@ -23,7 +23,6 @@ namespace WebAppSistemaVeterinaria.Data.Entities
 
         [Display(Name ="Nacimiento")]
         [Required(ErrorMessage ="El campo {0} es oblogatorio")]
-        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime Nacimiento { get; set; }
 

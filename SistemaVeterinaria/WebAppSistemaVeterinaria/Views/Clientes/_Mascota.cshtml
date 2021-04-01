@@ -1,0 +1,38 @@
+﻿@model WebAppSistemaVeterinaria.Models.MascotaViewModel
+
+
+<div class="form-group">
+    <label asp-for="Nombre" class="control-label"></label>
+    <input asp-for="Nombre" class="form-control" />
+    <span asp-validation-for="Nombre" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="ImageFile" class="control-label"></label>
+    <input asp-for="ImageFile" class="form-control" type="file" />
+    <span asp-validation-for="ImageFile" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="TipoMascotaId" class="control-label"></label>
+    <select asp-for="TipoMascotaId" asp-items="Model.TipoMascotas" class="form-control"></select>
+    <span asp-validation-for="TipoMascota" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Raza" class="control-label"></label>
+    <input asp-for="Raza" class="form-control" />
+    <span asp-validation-for="Raza" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Nacimiento" class="control-label"></label>
+    <input asp-for="Nacimiento" class="form-control" />
+    <span asp-validation-for="Nacimiento" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Comentarios" class="control-label"></label>
+    <textarea asp-for="Comentarios" class="form-control"></textarea>
+    <span asp-validation-for="Comentarios" class="text-danger"></span>
+</div>

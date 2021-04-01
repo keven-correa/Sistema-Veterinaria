@@ -1,0 +1,50 @@
+﻿@model WebAppSistemaVeterinaria.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<h2>Login</h2>
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <div class="form-group">
+                <label asp-for="UserName">Usuario</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-warning"></span>
+            </div>
+
+            <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+            <div class="form-group">
+                <label asp-for="Password">Contraseña</label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-warning"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input asp-for="RemenberMe" type="checkbox" class="form-check-input" />
+                    <label asp-for="RemenberMe" class="form-check-label">Recordar?</label>
+                </div>
+                <span asp-validation-for="RemenberMe" class="text-warning"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-success" />
+                <a asp-action="Register" class="btn btn-primary">Registrar nuevo usuario</a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

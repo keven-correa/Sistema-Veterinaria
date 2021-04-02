@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3tklU+X5fadBhA2ttZiF2Y4XvD+0VnH/6yWjil3D+0hc0AVGj0JyFAgqqBiGleX3yZZm9x+vL90MJDVSODdCIQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Keven\\OneDrive\\Escritorio\\ProyectoIII vet\\SistemaVeterinaria\\VeterianariaLibraries\\VeterianariaLibraries.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Keven\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -183,3 +183,6 @@ C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSist
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Clientes\_History.cshtml.g.cs
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Shared\_DeleteDialog.cshtml.g.cs
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Shared\_User.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\bin\Debug\net5.0\VeterianariaLibraries.dll
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\bin\Debug\net5.0\VeterianariaLibraries.pdb
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

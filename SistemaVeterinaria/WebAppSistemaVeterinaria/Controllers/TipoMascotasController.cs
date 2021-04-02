@@ -125,25 +125,33 @@ namespace WebAppSistemaVeterinaria.Controllers
             }
 
             var tipoMascota = await _context.TipoMascotas
+                .Include(tm => tm.Mascotas)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (tipoMascota == null)
             {
                 return NotFound();
             }
+            if(tipoMascota.Mascotas.Count > 0)
+            {
+                ModelState.AddModelError(string.Empty, "El tipo de mascota tiene historiales registrados.");
+                return RedirectToAction(nameof(Index));
 
-            return View(tipoMascota);
-        }
-
-        // POST: TipoMascotas/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var tipoMascota = await _context.TipoMascotas.FindAsync(id);
+            }
             _context.TipoMascotas.Remove(tipoMascota);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        //// POST: TipoMascotas/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    var tipoMascota = await _context.TipoMascotas.FindAsync(id);
+        //    _context.TipoMascotas.Remove(tipoMascota);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
 
         private bool TipoMascotaExists(int id)
         {

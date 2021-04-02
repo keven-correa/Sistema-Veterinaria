@@ -118,7 +118,6 @@ namespace WebAppSistemaVeterinaria.Controllers
             return View(model);
         }
 
-        // GET: Clientes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -126,48 +125,51 @@ namespace WebAppSistemaVeterinaria.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes.FindAsync(id);
-            if (cliente == null)
+            var owner = await _context.Clientes
+                .Include(o => o.User)
+                .FirstOrDefaultAsync(o => o.Id == id.Value);
+            if (owner == null)
             {
                 return NotFound();
             }
-            return View(cliente);
+
+            var view = new EditUserViewModel
+            {
+                Direccion = owner.User.Direccion,
+                Cedula = owner.User.Cedula,
+                Nombre = owner.User.Nombre,
+                Id = owner.Id,
+                Apellido = owner.User.Apellido,
+                Telefono = owner.User.PhoneNumber
+            };
+
+            return View(view);
         }
 
-        // POST: Clientes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id")] Cliente cliente)
+        public async Task<IActionResult> Edit(EditUserViewModel model)
         {
-            if (id != cliente.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(cliente);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ClienteExists(cliente.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                var owner = await _context.Clientes
+                    .Include(o => o.User)
+                    .FirstOrDefaultAsync(o => o.Id == model.Id);
+
+                owner.User.Cedula = model.Cedula;
+                owner.User.Nombre = model.Nombre;
+                owner.User.Apellido = model.Apellido;
+                owner.User.Direccion = model.Direccion;
+                owner.User.PhoneNumber = model.Telefono;
+
+                await _userHelper.UpdateUserAsync(owner.User);
                 return RedirectToAction(nameof(Index));
             }
-            return View(cliente);
+
+            return View(model);
         }
+
+
 
         // GET: Clientes/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -178,25 +180,37 @@ namespace WebAppSistemaVeterinaria.Controllers
             }
 
             var cliente = await _context.Clientes
+                .Include(u => u.User)
+                .Include(c => c.Mascotas)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (cliente == null)
             {
                 return NotFound();
             }
 
-            return View(cliente);
-        }
+            if (cliente.Mascotas.Count > 0)
+            {
+                ModelState.AddModelError(string.Empty, "Error");
 
-        // POST: Clientes/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var cliente = await _context.Clientes.FindAsync(id);
+                return RedirectToAction(nameof(Index));
+            }
+
+            await _userHelper.DeleteUserAsync(cliente.User.Email);
             _context.Clientes.Remove(cliente);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        //// POST: Clientes/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    var cliente = await _context.Clientes.FindAsync(id);
+        //    _context.Clientes.Remove(cliente);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
 
         private bool ClienteExists(int id)
         {
@@ -387,6 +401,55 @@ namespace WebAppSistemaVeterinaria.Controllers
 
             model.TipoServicios = _combosHelper.GetComboTipoServicios();
             return View(model);
+        }
+
+
+        public async Task<IActionResult> DeleteHistory(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var historia = await _context.Historials
+                .Include(o => o.Mascota)
+                .FirstOrDefaultAsync(o => o.Id == id.Value);
+            if (historia == null)
+            {
+                return NotFound();
+            }
+
+            _context.Historials.Remove(historia);
+            await _context.SaveChangesAsync();
+            //await _userHelper.DeleteUserAsync(owner.User.Email);
+            return RedirectToAction($"{nameof(Index)}");
+        }
+
+        public async Task<IActionResult> DeletePet(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var mascota = await _context.Mascotas
+                .Include(c => c.Cliente)
+                .Include(h => h.Historials)
+                .FirstOrDefaultAsync(o => o.Id == id.Value);
+            if (mascota == null)
+            {
+                return NotFound();
+            }
+            if (mascota.Historials.Count > 0)
+            {
+                ModelState.AddModelError(string.Empty, "La mascota no se puede eliminar porque tiene registros en su historial.");
+                return RedirectToAction($"{nameof(Index)}");
+            }
+
+            _context.Mascotas.Remove(mascota);
+            await _context.SaveChangesAsync();
+            //await _userHelper.DeleteUserAsync(owner.User.Email);
+            return RedirectToAction($"{nameof(Index)}");
         }
 
     }

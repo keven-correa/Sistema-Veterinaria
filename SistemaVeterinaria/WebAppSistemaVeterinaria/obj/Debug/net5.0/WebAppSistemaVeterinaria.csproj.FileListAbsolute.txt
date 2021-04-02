@@ -155,7 +155,6 @@ C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSist
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Clientes\Create.cshtml.g.cs
-C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Clientes\Delete.cshtml.g.cs
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Clientes\Details.cshtml.g.cs
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Clientes\Edit.cshtml.g.cs
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Clientes\Index.cshtml.g.cs
@@ -182,3 +181,5 @@ C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSist
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Clientes\AddHistory.cshtml.g.cs
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Clientes\EditHistory.cshtml.g.cs
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Clientes\_History.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Shared\_DeleteDialog.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Shared\_User.cshtml.g.cs

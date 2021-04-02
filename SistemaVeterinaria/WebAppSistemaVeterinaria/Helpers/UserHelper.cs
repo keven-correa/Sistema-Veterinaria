@@ -67,5 +67,21 @@ namespace WebAppSistemaVeterinaria.Helpers
         {
             return await _userManager.IsInRoleAsync(user, rolename);
         }
+
+        public async Task<bool> DeleteUserAsync(string email)
+        {
+            var user = await GetUserByEmailAsync(email);
+            if(user == null)
+            {
+                return true;
+            }
+            var response = await _userManager.DeleteAsync(user);
+            return response.Succeeded;
+        }
+
+        public async Task<IdentityResult> UpdateUserAsync(User user)
+        {
+            return await _userManager.UpdateAsync(user);
+        }
     }
 }

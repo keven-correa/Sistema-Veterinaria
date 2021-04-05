@@ -186,3 +186,8 @@ C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSist
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\bin\Debug\net5.0\VeterianariaLibraries.dll
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\bin\Debug\net5.0\VeterianariaLibraries.pdb
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Account\ChangePassword.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Account\ChangeUser.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Account\NotAutorized.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Home\Error404.cshtml.g.cs

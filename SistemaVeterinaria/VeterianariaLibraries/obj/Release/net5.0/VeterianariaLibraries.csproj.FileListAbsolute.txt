@@ -1,0 +1,12 @@
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\bin\Release\net5.0\VeterianariaLibraries.deps.json
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\bin\Release\net5.0\VeterianariaLibraries.dll
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\bin\Release\net5.0\ref\VeterianariaLibraries.dll
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\bin\Release\net5.0\VeterianariaLibraries.pdb
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\obj\Release\net5.0\VeterianariaLibraries.csprojAssemblyReference.cache
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\obj\Release\net5.0\VeterianariaLibraries.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\obj\Release\net5.0\VeterianariaLibraries.AssemblyInfoInputs.cache
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\obj\Release\net5.0\VeterianariaLibraries.AssemblyInfo.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\obj\Release\net5.0\VeterianariaLibraries.csproj.CoreCompileInputs.cache
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\obj\Release\net5.0\VeterianariaLibraries.dll
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\obj\Release\net5.0\ref\VeterianariaLibraries.dll
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\VeterianariaLibraries\obj\Release\net5.0\VeterianariaLibraries.pdb

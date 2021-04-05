@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8IVyoCbsrEi6W2odPpo65wAAAAACAAAAAAAQZgAAAAEAACAAAAAYo1BrrcwlE3PZ63K2MEnEitCGufJrNjU+A+DY1QfN+gAAAAAOgAAAAAIAACAAAABfOgzw3JGByIm8nt39EbeZ7zLmLshBDxjL2wdoxxk8NYAAAAAMlW2IlkRrLJ0ms1WeAJLh7WAoYLMLhW6p5LbPr6YNGUSJjT0bJjh2jenH3/qKNuS+uyhnH/6/4qw5iDVVDnyi+d4ewtESL3/02sQXB2rbzXZSPeoGKqDE8s8BNblY7UnQPSFuvQzij9YXr3/5F8ZbVnPonAzw2KkdCvqoqTdn5kAAAACVujMnOlMlmDzLe79xPEyPSei+gVJb5D0Q9pMeekQFzZnmFy39ESR/84k5lXwm28zfRq7V0tCivpKY3PPg9DPc</EncryptedPassword>
+    <History>True|2021-04-02T22:27:30.5908497Z;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:veterinariadbserver.database.windows.net,1433%3bInitial Catalog=Veterinaria_db%3bUser Id=user_admin%40veterinariadbserver%3bPassword=Laverdad02</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="WebAppSistemaVeterinaria.Data.DataContext">
+      <Value>Data Source=tcp:veterinariadbserver.database.windows.net,1433%3bInitial Catalog=Veterinaria_db%3bUser Id=user_admin%40veterinariadbserver%3bPassword=Laverdad02</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

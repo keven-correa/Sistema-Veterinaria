@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using WebAppSistemaVeterinaria.Data;
 using WebAppSistemaVeterinaria.Data.Entities;
 
@@ -131,7 +128,7 @@ namespace WebAppSistemaVeterinaria.Controllers
             {
                 return NotFound();
             }
-            if(tipoMascota.Mascotas.Count > 0)
+            if (tipoMascota.Mascotas.Count > 0)
             {
                 ModelState.AddModelError(string.Empty, "El tipo de mascota tiene historiales registrados.");
                 return RedirectToAction(nameof(Index));

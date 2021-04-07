@@ -1,18 +1,38 @@
-﻿@model WebAppSistemaVeterinaria.Data.Entities.Manager
+﻿@model WebAppSistemaVeterinaria.Models.AddUserViewModel
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Cree un nuevo administrador</h1>
 
-<h4>Manager</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <div class="form-group">
+                    <label asp-for="UsuarioNombre" class="control-label"></label>
+                    <input asp-for="UsuarioNombre" class="form-control" />
+                    <span asp-validation-for="UsuarioNombre" class="text-danger"></span>
+                </div>
+
+                <partial name="_User"/>
+
+                <div class="form-group">
+                    <label asp-for="Contraseña" class="control-label"></label>
+                    <input asp-for="Contraseña" class="form-control" />
+                    <span asp-validation-for="Contraseña" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Confirmarcontraseña" class="control-label"></label>
+                    <input asp-for="Confirmarcontraseña" class="form-control" />
+                    <span asp-validation-for="Confirmarcontraseña" class="text-danger"></span>
+                </div>
+
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -20,7 +40,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-success">Back to List</a>
 </div>
 
 @section Scripts {

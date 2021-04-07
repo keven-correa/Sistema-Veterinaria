@@ -1,0 +1,149 @@
+﻿@model WebAppSistemaVeterinaria.Data.Entities.Mascota
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+
+<h2>Datos de la mascota</h2>
+
+<div>
+    <h4>Detalles</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <dl class="dl-horizontal">
+                <dt>
+                    Cliente
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Cliente.User.NombreCompleto)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Raza)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nacimiento)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Nacimiento)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Comentarios)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Comentarios)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-md-4">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Url.Content(Model.ImageUrl)" alt="Image" style="width:300px;height:300px;max-height: 100%; width: auto;" />
+            }
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="EditPet" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="AddHistory" asp-route-id="@Model.Id" class="btn btn-primary">Agregar historial</a>
+    <a asp-action="Index" asp-route-id="@Model.Id" class="btn btn-success">Volver</a>
+</div>
+<hr />
+@if (Model.Historials.Count == 0)
+{
+    <h4>No hay historias agregadas.</h4>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Historial</h3>
+                </div>
+                <div class="panel-body">
+                    <table id="MyTable" class="table table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Historials.FirstOrDefault().Fecha)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Historials.FirstOrDefault().TipoServicio.Nombre)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Historials.FirstOrDefault().Descripcion)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Historials.FirstOrDefault().Comentarios)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Historials)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Fecha)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TipoServicio.Nombre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Descripcion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Comentarios)
+                                    </td>
+                                    <td>
+                                        <a asp-action="EditHistory" class="btn btn-success" asp-route-id="@item.Id"><i class="fas fa-edit"></i> </a>
+                                        <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<partial name="_DeleteDialog" />
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#MyTable').DataTable();
+
+            // Delete item
+            var item_to_delete;
+
+            $('.deleteItem').click((e) => {
+                item_to_delete = e.currentTarget.dataset.id;
+            });
+
+            $("#btnYesDelete").click(function () {
+                window.location.href = '/Mascotas/DeleteHistory/' + item_to_delete;
+            });
+        });
+    </script>
+}

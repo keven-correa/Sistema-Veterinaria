@@ -1,5 +1,3 @@
-using System;
-
 namespace WebAppSistemaVeterinaria.Models
 {
     public class ErrorViewModel

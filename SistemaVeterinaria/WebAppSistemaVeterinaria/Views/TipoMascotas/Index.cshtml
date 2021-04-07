@@ -3,13 +3,14 @@
 @{
     ViewData["Title"] = "Index";
 }
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
 
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table id="MyTable" class="table table-striped" style="width:100%">
     <thead>
         <tr>
             <th>
@@ -27,11 +28,11 @@
                 </td>
                 <td>
 
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info"><i class="fas fa-eye"></i></a>
                     <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal"
                             data-target="#deleteDialog">
-                        Borrar
+                        <i class="fas fa-trash"></i>
                     </button>
                 </td>
             </tr>
@@ -43,11 +44,12 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             // Delete item
             var item_to_delete;
+            $('#MyTable').DataTable();
 
             $('.deleteItem').click((e) => {
                 item_to_delete = e.currentTarget.dataset.id;

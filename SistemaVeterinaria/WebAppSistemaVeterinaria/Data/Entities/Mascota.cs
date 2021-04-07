@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebAppSistemaVeterinaria.Data.Entities
 {
@@ -10,27 +8,27 @@ namespace WebAppSistemaVeterinaria.Data.Entities
     {
         public int Id { get; set; }
 
-        [Display(Name ="Nombre")]
-        [MaxLength(50, ErrorMessage ="El campo {0} no puede tener mas de {1} caracteres")]
-        [Required(ErrorMessage ="El campo {0} es obligatorio")]
+        [Display(Name = "Nombre")]
+        [MaxLength(50, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio")]
         public string Nombre { get; set; }
 
-        [Display(Name ="Imagen")]
+        [Display(Name = "Imagen")]
         public string ImageUrl { get; set; }
 
-        [MaxLength(50, ErrorMessage ="El campo {0} no puede tener mas de {1} caracteres")]
+        [MaxLength(50, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres")]
         public string Raza { get; set; }
 
-        [Display(Name ="Nacimiento")]
-        [Required(ErrorMessage ="El campo {0} es oblogatorio")]
+        [Display(Name = "Nacimiento")]
+        [Required(ErrorMessage = "El campo {0} es oblogatorio")]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime Nacimiento { get; set; }
 
         public string Comentarios { get; set; }
 
         public string ImageFullPath => string.IsNullOrEmpty(ImageUrl)
-        	? null
-        	: $"https://TDB.azurewebsites.net{ImageUrl.Substring(1)}";
+            ? null
+            : $"https://TDB.azurewebsites.net{ImageUrl.Substring(1)}";
 
 
         [Display(Name = "nacimiento")]
@@ -41,7 +39,7 @@ namespace WebAppSistemaVeterinaria.Data.Entities
         public Cliente Cliente { get; set; }
         public ICollection<Historial> Historials { get; set; }
         public ICollection<Agenda> Agendas { get; set; }
-	}
+    }
 
-    
+
 }

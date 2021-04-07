@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using WebAppSistemaVeterinaria.Data;
 using WebAppSistemaVeterinaria.Data.Entities;
 using WebAppSistemaVeterinaria.Models;
@@ -35,7 +32,7 @@ namespace WebAppSistemaVeterinaria.Helpers
                 Comentarios = model.Comentarios
             };
 
-            
+
 
             return mascota;
         }

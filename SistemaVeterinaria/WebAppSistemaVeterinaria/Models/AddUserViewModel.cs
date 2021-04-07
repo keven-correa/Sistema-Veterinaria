@@ -10,7 +10,7 @@ namespace WebAppSistemaVeterinaria.Models
         [EmailAddress]
         public string UsuarioNombre { get; set; }
 
-       
+
         [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DataType(DataType.Password)]

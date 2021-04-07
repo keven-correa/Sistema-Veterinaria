@@ -1,7 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using WebAppSistemaVeterinaria.Data.Entities;
 using WebAppSistemaVeterinaria.Models;
@@ -71,7 +68,7 @@ namespace WebAppSistemaVeterinaria.Helpers
         public async Task<bool> DeleteUserAsync(string email)
         {
             var user = await GetUserByEmailAsync(email);
-            if(user == null)
+            if (user == null)
             {
                 return true;
             }

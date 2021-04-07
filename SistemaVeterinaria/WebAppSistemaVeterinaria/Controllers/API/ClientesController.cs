@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VeterianariaLibraries.Models;
@@ -26,7 +24,7 @@ namespace WebAppSistemaVeterinaria.Controllers.API
 
         [HttpPost]
         [Route("GetClientesByEmail")]
-        public async Task<IActionResult> GetCliente (EmailRequest emailRequest)
+        public async Task<IActionResult> GetCliente(EmailRequest emailRequest)
         {
             var owner = await _dataContext.Clientes
                 .Include(o => o.User)
@@ -71,4 +69,3 @@ namespace WebAppSistemaVeterinaria.Controllers.API
     }
 }
 
-     

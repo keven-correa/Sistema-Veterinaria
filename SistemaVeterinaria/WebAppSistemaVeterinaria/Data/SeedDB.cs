@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAppSistemaVeterinaria.Data.Entities;
@@ -30,7 +29,7 @@ namespace WebAppSistemaVeterinaria.Data
             await checkMascotasAsync();
             await checkAgendasAsync();
             await checkManagerAsync(manager);
-            
+
 
 
 
@@ -53,7 +52,7 @@ namespace WebAppSistemaVeterinaria.Data
                 await _datacontext.SaveChangesAsync();
             }
         }
-       
+
 
         private async Task<User> checkUserAsync(string cedula, string nombre, string apellido, string email, string telefono, string direccion, string role)
         {
@@ -87,13 +86,13 @@ namespace WebAppSistemaVeterinaria.Data
             {
                 var initialDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
                 var endDate = initialDate.AddYears(1);
-                
-                while(initialDate < endDate)
+
+                while (initialDate < endDate)
                 {
                     if (initialDate.DayOfWeek != DayOfWeek.Sunday)
                     {
                         var finalDate2 = initialDate.AddHours(10);
-                        while(initialDate < finalDate2)
+                        while (initialDate < finalDate2)
                         {
                             _datacontext.Agendas.Add(new Agenda
                             {
@@ -115,7 +114,7 @@ namespace WebAppSistemaVeterinaria.Data
 
 
         }
-        
+
         private async Task checkMascotasAsync()
         {
             var cliente = _datacontext.Clientes.FirstOrDefault();
@@ -140,7 +139,7 @@ namespace WebAppSistemaVeterinaria.Data
             });
         }
 
-     
+
         //private void AddClientes (string cedula, string nombre, string apellido, string telefonoHogar, string celular, string direccion)
         //{
         //    _datacontext.Clientes.Add(new Cliente
@@ -158,7 +157,7 @@ namespace WebAppSistemaVeterinaria.Data
         {
             if (!_datacontext.TipoServicios.Any())
             {
-                _datacontext.TipoServicios.Add(new TipoServicio { Nombre = "Consulta"});
+                _datacontext.TipoServicios.Add(new TipoServicio { Nombre = "Consulta" });
                 _datacontext.TipoServicios.Add(new TipoServicio { Nombre = "Urgencia" });
                 _datacontext.TipoServicios.Add(new TipoServicio { Nombre = "Vacunacion" });
                 await _datacontext.SaveChangesAsync();
@@ -173,7 +172,7 @@ namespace WebAppSistemaVeterinaria.Data
             {
                 _datacontext.TipoMascotas.Add(new TipoMascota { Nombre = "Perro" });
                 _datacontext.TipoMascotas.Add(new TipoMascota { Nombre = "Gato" });
-                _datacontext.TipoMascotas.Add(new TipoMascota { Nombre = "Tortuga"});
+                _datacontext.TipoMascotas.Add(new TipoMascota { Nombre = "Tortuga" });
                 await _datacontext.SaveChangesAsync();
             }
         }

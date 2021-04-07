@@ -191,3 +191,9 @@ C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSist
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Account\NotAutorized.cshtml.g.cs
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Home\Error404.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\bin\Debug\net5.0\libman.json
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Mascotas\Details.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Mascotas\Edit.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Mascotas\Index.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Mascotas\AddHistory.cshtml.g.cs
+C:\Users\Keven\OneDrive\Escritorio\ProyectoIII vet\SistemaVeterinaria\WebAppSistemaVeterinaria\obj\Debug\net5.0\Razor\Views\Mascotas\EditHistory.cshtml.g.cs

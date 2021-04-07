@@ -4,90 +4,100 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Clientes</h1>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
+<br />
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Crear nuevo cliente</a>
+    <a asp-action="Create" class="btn btn-primary"><i class="fas fa-user-plus"></i> Crear nuevo cliente</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.User.Cedula)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User.Apellido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User.Direccion)
-            </th>
-            <th>
-                # de mascotas
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.Cedula)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.Nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.Apellido)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.PhoneNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.Direccion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mascotas.Count)
-                </td>
-                <td>
-                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id">Editar</a> 
-                    <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id">Detalles</a> 
-                    <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog">Eliminar</button>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+@*<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">*@
+            @*<div class="panel-heading">
+                <h3 class="panel-title">Owners</h3>
+            </div>*@
+            @*<div class="panel-body">*@
+                <table id="MyTable" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.User.Cedula)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.User.Nombre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.User.Apellido)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.User.Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.User.Direccion)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.User.PhoneNumber)
+                            </th>
+                            <th>
+                                #Pets
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.Cedula)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.Nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.Apellido)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.Direccion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.PhoneNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Mascotas.Count)
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" asp-action="Edit"  asp-route-id="@item.Id"> <i class="fas fa-edit"></i> </a>
+                                    <a asp-action="Details" class="btn btn-warning" asp-route-id="@item.Id"><i class="fas fa-eye"></i> </a>
+                                    <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+        
 
 <partial name="_DeleteDialog" />
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
+        $('#MyTable').DataTable();
             // Delete item
             var item_to_delete;
-
             $('.deleteItem').click((e) => {
                 item_to_delete = e.currentTarget.dataset.id;
             });
-
             $("#btnYesDelete").click(function () {
                 window.location.href = '/Clientes/Delete/' + item_to_delete;
             });
         });
     </script>
 }
-
